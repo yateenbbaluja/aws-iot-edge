@@ -21,14 +21,9 @@ jobs:
     - name: Analysing the code with pylint
       run: |
         pylint $(git ls-files '*.py')
-        
-   
-    - name: Build & push Docker image
     - uses: mr-smithers-excellent/docker-build-push@v5
       with:
         image: balujayatin/my-app
-        tags: v1.1, latest
-        registry: registry-url.io
-        dockerfile: Dockerfile.ci
+        registry: docker.io
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
