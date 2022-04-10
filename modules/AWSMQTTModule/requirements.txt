@@ -1,0 +1,3 @@
+pytz==2019.3
+termcolor
+paho-mqtt
