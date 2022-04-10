@@ -1,13 +1,11 @@
-name: Docker build and push
+name: Build and Publish
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
-
 jobs:
-  build-docker:
+  publish_docker_images:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
