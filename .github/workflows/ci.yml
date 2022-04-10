@@ -21,13 +21,13 @@ jobs:
     - name: Analysing the code with pylint
       run: |
         pylint $(git ls-files '*.py')
-    - uses: actions/checkout@v2
-    - name: Check out code
-    - uses: mr-smithers-excellent/docker-build-push@v5
+        
+   
     - name: Build & push Docker image
+    - uses: mr-smithers-excellent/docker-build-push@v5
       with:
-        image: repo/image
-        tags: v1, latest
+        image: balujayatin/my-app
+        tags: v1.1, latest
         registry: registry-url.io
         dockerfile: Dockerfile.ci
         username: ${{ secrets.DOCKER_USERNAME }}
